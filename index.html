@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guidebook IMAGE Training Centre</title>
+  <meta name="description" content="Guidebook Program Kerja IMAGE Training Centre Departemen Ilmu dan Komunikasi IMAGE UPI" />
+  <style>
+    :root {
+      --bg: #090b1f;
+      --bg-soft: #11152f;
+      --text: #f7f7ff;
+      --muted: rgba(247, 247, 255, 0.72);
+      --line: rgba(255, 255, 255, 0.16);
+      --card: rgba(255, 255, 255, 0.10);
+      --card-2: rgba(255, 255, 255, 0.07);
+      --white: #ffffff;
+      --blue: #5ad7ff;
+      --purple: #a78bfa;
+      --pink: #ff6fb1;
+      --orange: #ffb86b;
+      --green: #6ef3b5;
+      --yellow: #ffe977;
+      --shadow: 0 28px 80px rgba(0, 0, 0, 0.35);
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 15% 10%, rgba(90, 215, 255, 0.32), transparent 33%),
+        radial-gradient(circle at 85% 8%, rgba(255, 111, 177, 0.28), transparent 31%),
+        radial-gradient(circle at 40% 95%, rgba(167, 139, 250, 0.34), transparent 34%),
+        linear-gradient(135deg, #070815 0%, #0b1030 44%, #160c2e 100%);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,.9), rgba(0,0,0,.2));
+      z-index: -2;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      width: 420px;
+      height: 420px;
+      right: -170px;
+      top: 34%;
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(255, 184, 107, .38), rgba(255, 111, 177, .25));
+      filter: blur(12px);
+      opacity: .75;
+      z-index: -1;
+      animation: floatBlob 9s ease-in-out infinite alternate;
+    }
+
+    @keyframes floatBlob {
+      from { transform: translateY(-20px) scale(.95); }
+      to { transform: translateY(60px) scale(1.08); }
+    }
+
+    .noise {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .09;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      z-index: -1;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 34px));
+      margin: 0 auto;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 16px;
+      z-index: 50;
+      width: min(1180px, calc(100% - 34px));
+      margin: 16px auto 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(7, 8, 21, 0.62);
+      backdrop-filter: blur(22px);
+      box-shadow: 0 18px 50px rgba(0,0,0,.22);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text);
+      min-width: max-content;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background:
+        linear-gradient(135deg, rgba(90, 215, 255, .9), rgba(167, 139, 250, .88) 50%, rgba(255, 111, 177, .92));
+      box-shadow: 0 0 34px rgba(90, 215, 255, .35);
+      font-weight: 900;
+      color: #081027;
+      letter-spacing: -.08em;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .brand-text strong {
+      font-size: .92rem;
+      letter-spacing: .02em;
+    }
+
+    .brand-text span {
+      font-size: .72rem;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,.82);
+      text-decoration: none;
+      font-size: .82rem;
+      padding: 10px 12px;
+      border-radius: 999px;
+      transition: .25s ease;
+    }
+
+    .nav-links a:hover {
+      background: rgba(255,255,255,.11);
+      color: #fff;
+      transform: translateY(-1px);
+    }
+
+    .hero {
+      position: relative;
+      padding: 92px 0 54px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 26px;
+      align-items: stretch;
+    }
+
+    .hero-card {
+      position: relative;
+      padding: clamp(26px, 5vw, 54px);
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: var(--radius-xl);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.16), rgba(255,255,255,.055)),
+        radial-gradient(circle at 12% 10%, rgba(90,215,255,.18), transparent 32%),
+        radial-gradient(circle at 86% 18%, rgba(255,111,177,.17), transparent 34%);
+      backdrop-filter: blur(26px);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      right: -70px;
+      top: -90px;
+      border-radius: 50%;
+      background: conic-gradient(from 150deg, var(--blue), var(--pink), var(--orange), var(--purple), var(--blue));
+      opacity: .22;
+      filter: blur(2px);
+      animation: rotate 12s linear infinite;
+    }
+
+    @keyframes rotate {
+      to { transform: rotate(360deg); }
+    }
+
+    .eyebrow {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 13px;
+      margin-bottom: 18px;
+      border: 1px solid rgba(255,255,255,.17);
+      border-radius: 999px;
+      background: rgba(255,255,255,.08);
+      color: rgba(255,255,255,.82);
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+
+    .pulse {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 0 rgba(110,243,181,.55);
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      70% { box-shadow: 0 0 0 12px rgba(110,243,181,0); }
+      100% { box-shadow: 0 0 0 0 rgba(110,243,181,0); }
+    }
+
+    h1 {
+      position: relative;
+      max-width: 850px;
+      font-size: clamp(3.1rem, 8vw, 7.9rem);
+      line-height: .88;
+      letter-spacing: -.075em;
+      margin-bottom: 22px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(100deg, #fff 0%, #8ee8ff 24%, #ffe977 52%, #ff8cc3 76%, #c9b7ff 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      filter: drop-shadow(0 20px 40px rgba(0,0,0,.2));
+    }
+
+    .hero-desc {
+      position: relative;
+      max-width: 680px;
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      line-height: 1.75;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      position: relative;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .btn {
+      border: 0;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 46px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: .92rem;
+      transition: .25s ease;
+      color: #06101e;
+      background: linear-gradient(135deg, var(--blue), var(--green));
+      box-shadow: 0 18px 45px rgba(90,215,255,.24);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 24px 55px rgba(90,215,255,.34);
+    }
+
+    .btn.secondary {
+      color: var(--text);
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.16);
+      box-shadow: none;
+    }
+
+    .hero-side {
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: 18px;
+    }
+
+    .mini-card {
+      padding: 22px;
+      border-radius: var(--radius-lg);
+      background: rgba(255,255,255,.09);
+      border: 1px solid rgba(255,255,255,.15);
+      backdrop-filter: blur(22px);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .mini-card::after {
+      content: "";
+      position: absolute;
+      inset: auto -42px -60px auto;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.1);
+    }
+
+    .mini-card h3 {
+      font-size: 1rem;
+      margin-bottom: 10px;
+      color: rgba(255,255,255,.82);
+    }
+
+    .mini-card p {
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: .95rem;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .stat {
+      padding: 18px;
+      min-height: 118px;
+      border: 1px solid rgba(255,255,255,.13);
+      border-radius: 22px;
+      background: linear-gradient(145deg, rgba(255,255,255,.12), rgba(255,255,255,.055));
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .stat strong {
+      font-size: 2rem;
+      letter-spacing: -.04em;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: .86rem;
+      line-height: 1.35;
+    }
+
+    .section {
+      padding: 64px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 26px;
+    }
+
+    .section-kicker {
+      color: var(--green);
+      text-transform: uppercase;
+      font-size: .76rem;
+      font-weight: 900;
+      letter-spacing: .18em;
+      margin-bottom: 9px;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4.2vw, 4.2rem);
+      line-height: .98;
+      letter-spacing: -.055em;
+      max-width: 760px;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      max-width: 430px;
+      line-height: 1.7;
+      font-size: .97rem;
+    }
+
+    .glass {
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: var(--radius-xl);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.12), rgba(255,255,255,.052));
+      backdrop-filter: blur(22px);
+      box-shadow: var(--shadow);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr .8fr;
+      gap: 18px;
+    }
+
+
+    .about-single {
+      grid-template-columns: 1fr;
+    }
+
+    .about-single .about-main {
+      max-width: none;
+      text-align: left;
+    }
+
+    .closing-actions {
+      position: relative;
+      z-index: 2;
+      margin-top: 28px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .about-main {
+      padding: clamp(24px, 4vw, 38px);
+    }
+
+    .about-main p {
+      color: rgba(255,255,255,.78);
+      line-height: 1.85;
+      font-size: 1.04rem;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .tag {
+      padding: 10px 13px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.075);
+      color: rgba(255,255,255,.84);
+      font-size: .85rem;
+      font-weight: 700;
+    }
+
+    .vision-card {
+      padding: clamp(24px, 4vw, 34px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .vision-card::before {
+      content: "";
+      position: absolute;
+      width: 170px;
+      height: 170px;
+      right: -64px;
+      top: -60px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(255,233,119,.35), rgba(255,111,177,.22));
+    }
+
+    .vision-card h3 {
+      position: relative;
+      font-size: 1.35rem;
+      margin-bottom: 12px;
+    }
+
+    .vision-card p, .vision-card li {
+      position: relative;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: .95rem;
+    }
+
+    .mission-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+      list-style: none;
+    }
+
+    .mission-list li {
+      padding: 13px 14px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 16px;
+      background: rgba(255,255,255,.055);
+    }
+
+    .timeline-wrap {
+      position: relative;
+      padding: 28px;
+      overflow: hidden;
+    }
+
+    .timeline-wrap::before {
+      content: "";
+      position: absolute;
+      left: 41px;
+      top: 34px;
+      bottom: 34px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--blue), var(--pink), var(--orange), var(--green));
+      opacity: .9;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 16px;
+      position: relative;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 16px;
+      align-items: start;
+    }
+
+    .timeline-dot {
+      width: 28px;
+      height: 28px;
+      margin-left: 0;
+      border-radius: 50%;
+      background: #fff;
+      border: 7px solid rgba(90,215,255,.75);
+      box-shadow: 0 0 0 8px rgba(255,255,255,.055), 0 0 34px rgba(90,215,255,.32);
+      z-index: 2;
+      justify-self: center;
+      margin-top: 12px;
+    }
+
+    .timeline-content {
+      padding: 18px 18px 19px;
+      border-radius: 22px;
+      background: rgba(255,255,255,.075);
+      border: 1px solid rgba(255,255,255,.13);
+      transition: .25s ease;
+    }
+
+    .timeline-content:hover {
+      transform: translateX(5px);
+      background: rgba(255,255,255,.105);
+    }
+
+    .timeline-content small {
+      display: inline-flex;
+      margin-bottom: 8px;
+      color: var(--yellow);
+      font-size: .73rem;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-weight: 900;
+    }
+
+    .timeline-content h3 {
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+    }
+
+    .timeline-content p {
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: .92rem;
+    }
+
+    .division-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .division-card {
+      position: relative;
+      padding: 24px;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(255,255,255,.14);
+      background:
+        radial-gradient(circle at top right, rgba(90,215,255,.12), transparent 36%),
+        linear-gradient(145deg, rgba(255,255,255,.105), rgba(255,255,255,.048));
+      backdrop-filter: blur(20px);
+      box-shadow: 0 24px 65px rgba(0,0,0,.24);
+      overflow: hidden;
+      transition: .25s ease;
+    }
+
+    .division-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255,255,255,.24);
+      box-shadow: 0 34px 80px rgba(0,0,0,.33);
+    }
+
+    .division-top {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .icon {
+      width: 50px;
+      height: 50px;
+      flex: 0 0 auto;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      font-size: 1.35rem;
+      background: linear-gradient(135deg, rgba(90,215,255,.9), rgba(167,139,250,.9));
+      box-shadow: 0 18px 36px rgba(90,215,255,.17);
+    }
+
+    .division-card:nth-child(2) .icon {
+      background: linear-gradient(135deg, rgba(255,111,177,.9), rgba(255,184,107,.9));
+    }
+
+    .division-card:nth-child(3) .icon {
+      background: linear-gradient(135deg, rgba(110,243,181,.9), rgba(90,215,255,.88));
+    }
+
+    .division-card:nth-child(4) .icon {
+      background: linear-gradient(135deg, rgba(255,233,119,.94), rgba(255,111,177,.86));
+    }
+
+    .division-card:nth-child(5) .icon {
+      background: linear-gradient(135deg, rgba(167,139,250,.96), rgba(255,111,177,.84));
+    }
+
+    .division-card h3 {
+      font-size: 1.25rem;
+      letter-spacing: -.02em;
+      margin-bottom: 5px;
+    }
+
+    .division-card p {
+      color: var(--muted);
+      font-size: .9rem;
+      line-height: 1.55;
+    }
+
+    .task-list {
+      display: grid;
+      gap: 10px;
+      list-style: none;
+      margin-top: 14px;
+      max-height: 385px;
+      overflow: auto;
+      padding-right: 4px;
+    }
+
+    .task-list::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    .task-list::-webkit-scrollbar-thumb {
+      background: rgba(255,255,255,.24);
+      border-radius: 99px;
+    }
+
+    .task-list li {
+      display: grid;
+      grid-template-columns: 24px 1fr;
+      gap: 10px;
+      align-items: start;
+      padding: 11px 12px;
+      border-radius: 15px;
+      background: rgba(255,255,255,.055);
+      border: 1px solid rgba(255,255,255,.08);
+      color: rgba(255,255,255,.81);
+      font-size: .9rem;
+      line-height: 1.45;
+    }
+
+    .check {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: #071022;
+      font-weight: 900;
+      font-size: .76rem;
+      background: linear-gradient(135deg, var(--green), var(--blue));
+      margin-top: 1px;
+    }
+
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .benefit {
+      min-height: 210px;
+      padding: 23px;
+      border-radius: 26px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: linear-gradient(145deg, rgba(255,255,255,.115), rgba(255,255,255,.048));
+      transition: .25s ease;
+    }
+
+    .benefit:hover {
+      transform: translateY(-5px);
+      background: linear-gradient(145deg, rgba(255,255,255,.145), rgba(255,255,255,.065));
+    }
+
+    .benefit b {
+      display: block;
+      font-size: 2.1rem;
+      margin-bottom: 22px;
+      filter: drop-shadow(0 16px 24px rgba(0,0,0,.2));
+    }
+
+    .benefit h3 {
+      font-size: 1.05rem;
+      margin-bottom: 9px;
+    }
+
+    .benefit p {
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: .91rem;
+    }
+
+    .closing-card {
+      padding: clamp(28px, 5vw, 56px);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .closing-card::before {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      background:
+        radial-gradient(circle at 20% 10%, rgba(90,215,255,.18), transparent 30%),
+        radial-gradient(circle at 84% 20%, rgba(255,111,177,.18), transparent 32%),
+        radial-gradient(circle at 50% 95%, rgba(255,233,119,.12), transparent 34%);
+      pointer-events: none;
+    }
+
+    .closing-card h2,
+    .closing-card p,
+    .closing-card .signature {
+      position: relative;
+    }
+
+    .closing-card h2 {
+      font-size: clamp(2.2rem, 5vw, 5.2rem);
+      line-height: .93;
+      letter-spacing: -.06em;
+      margin-bottom: 18px;
+    }
+
+    .closing-card p {
+      color: rgba(255,255,255,.78);
+      max-width: 780px;
+      margin: 0 auto;
+      line-height: 1.8;
+      font-size: 1.04rem;
+    }
+
+    .signature {
+      margin-top: 28px;
+      display: inline-flex;
+      padding: 12px 16px;
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 999px;
+      color: rgba(255,255,255,.85);
+      background: rgba(255,255,255,.075);
+      font-weight: 800;
+    }
+
+    .footer {
+      padding: 36px 0 46px;
+      color: rgba(255,255,255,.62);
+      text-align: center;
+      font-size: .9rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: .65s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .hero-wide {
+      min-height: 660px;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-bg {
+      background:
+        linear-gradient(90deg,
+          rgba(7, 8, 21, .92) 0%,
+          rgba(7, 8, 21, .78) 34%,
+          rgba(14, 17, 48, .46) 58%,
+          rgba(255, 111, 177, .12) 100%
+        ),
+        radial-gradient(circle at 18% 14%, rgba(90,215,255,.28), transparent 30%),
+        radial-gradient(circle at 78% 18%, rgba(255,111,177,.22), transparent 34%),
+        radial-gradient(circle at 45% 95%, rgba(255,233,119,.13), transparent 35%),
+        url("https://res.cloudinary.com/dpgwrnk1r/image/upload/v1781767816/ideas/training_session_1.png");
+      background-size: cover;
+      background-position: center right;
+      background-repeat: no-repeat;
+      isolation: isolate;
+    }
+
+    .hero-bg::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      background:
+        linear-gradient(135deg, rgba(90,215,255,.16), transparent 35%),
+        linear-gradient(315deg, rgba(255,111,177,.16), transparent 42%),
+        radial-gradient(circle at 82% 18%, rgba(255,255,255,.13), transparent 24%);
+      mix-blend-mode: screen;
+    }
+
+    .hero-bg::before {
+      content: "";
+      position: absolute;
+      inset: 16px;
+      z-index: 2;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,.18);
+      pointer-events: none;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,.055), transparent 54%),
+        linear-gradient(180deg, rgba(255,255,255,.04), transparent);
+    }
+
+    .hero-copy {
+      position: relative;
+      z-index: 3;
+      text-align: left;
+      max-width: 760px;
+    }
+
+    .hero-bg .hero-desc {
+      max-width: 650px;
+      color: rgba(255,255,255,.82);
+      text-shadow: 0 12px 34px rgba(0,0,0,.32);
+    }
+
+    .hero-bg .gradient-text {
+      text-shadow: 0 26px 70px rgba(0,0,0,.55);
+    }
+
+    @media (max-width: 980px) {
+      .hero-wide,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-wide {
+        min-height: 590px;
+      }
+
+      .hero-bg {
+        background-position: 68% center;
+      }
+
+      .division-grid,
+      .benefit-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .hero {
+        padding-top: 56px;
+      }
+
+      .hero-card {
+        padding: 25px 20px;
+      }
+
+      .hero-wide {
+        min-height: 560px;
+      }
+
+      .hero-bg {
+        background:
+          linear-gradient(180deg,
+            rgba(7, 8, 21, .86) 0%,
+            rgba(7, 8, 21, .76) 42%,
+            rgba(7, 8, 21, .60) 100%
+          ),
+          radial-gradient(circle at 18% 14%, rgba(90,215,255,.26), transparent 30%),
+          radial-gradient(circle at 78% 18%, rgba(255,111,177,.20), transparent 34%),
+          url("https://res.cloudinary.com/dpgwrnk1r/image/upload/v1781767816/ideas/training_session_1.png");
+        background-size: cover;
+        background-position: center;
+      }
+
+      h1 {
+        font-size: clamp(3.2rem, 16vw, 5rem);
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .stat-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline-wrap {
+        padding: 20px 14px;
+      }
+
+      .timeline-wrap::before {
+        left: 28px;
+      }
+
+      .timeline-item {
+        grid-template-columns: 36px 1fr;
+        gap: 11px;
+      }
+
+      .timeline-dot {
+        width: 22px;
+        height: 22px;
+        border-width: 6px;
+      }
+
+      .division-card,
+      .benefit {
+        padding: 20px;
+      }
+
+      .section {
+        padding: 48px 0;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+        color: #111827;
+      }
+
+      .navbar,
+      .noise,
+      .hero-actions {
+        display: none;
+      }
+
+      .hero,
+      .section {
+        padding: 22px 0;
+      }
+
+      .glass,
+      .hero-card,
+      .mini-card,
+      .division-card,
+      .benefit,
+      .timeline-content {
+        box-shadow: none;
+        background: #fff;
+        color: #111827;
+        border: 1px solid #d1d5db;
+        break-inside: avoid;
+      }
+
+      .gradient-text,
+      .section-title,
+      .closing-card h2 {
+        color: #111827;
+        background: none;
+        -webkit-text-fill-color: initial;
+      }
+
+      p,
+      .hero-desc,
+      .section-subtitle,
+      .division-card p,
+      .task-list li,
+      .timeline-content p,
+      .benefit p {
+        color: #374151;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="noise"></div>
+
+  <nav class="navbar">
+    <a href="#home" class="brand" aria-label="IMAGE Training Centre">
+      <div class="brand-mark">ITC</div>
+      <div class="brand-text">
+        <strong>IMAGE Training Centre</strong>
+        <span>Guidebook</span>
+      </div>
+    </a>
+
+    <div class="nav-links" aria-label="Navigasi">
+      <a href="#about">Overview</a>
+      <a href="#division">Divisi</a>
+      <a href="#closing">Closing</a>
+    </div>
+  </nav>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-card hero-wide hero-bg reveal">
+          <div class="hero-copy">
+            <div class="eyebrow"><span class="pulse"></span> Departemen Ilmu dan Komunikasi</div>
+            <h1><span class="gradient-text">IMAGE Training Centre</span></h1>
+            <p class="hero-desc">
+              Guidebook singkat program kerja Departemen Ilmu dan Komunikasi yang berisi gambaran kegiatan,
+              visi misi, jobdesk divisi, dan closing sebagai panduan pelaksanaan IMAGE Training Centre.
+            </p>
+            <div class="hero-actions">
+              <a class="btn" href="#division">Lihat Jobdesk Divisi →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">Overview</div>
+            <h2 class="section-title">Apa itu ITC?</h2>
+          </div>
+        </div>
+
+        <div class="about-grid about-single">
+          <article class="about-main glass reveal">
+            <p>
+              <strong>IMAGE Training Centre</strong> adalah program kerja dari Departemen Ilmu dan Komunikasi.
+              Acara ini bertujuan untuk mengembangkan dan meningkatkan soft skill anggota IMAGE serta Mahasiswa Manajemen UPI
+              melalui kegiatan pelatihan yang terarah, aplikatif, dan relevan dengan kebutuhan pengembangan diri mahasiswa.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="division">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">Jobdesk</div>
+            <h2 class="section-title">Pembagian Kerja per Divisi</h2>
+          </div>
+        </div>
+
+<div class="division-grid">
+          <article class="division-card reveal">
+            <div class="division-top">
+              <div class="icon">🎤</div>
+              <div>
+                <h3>Divisi Acara</h3>
+                <p>Divisi yang bertindak sebagai arsitek kegiatan, bertanggung jawab dalam menyusun substansi, nilai edukasi, dan manajemen alur acara.</p>
+              </div>
+            </div>
+            <ul class="task-list">
+              <li><span class="check">✓</span><span>Merumuskan konsep besar, tema, judul, dan arah pelaksanaan kegiatan.</span></li>
+              <li><span class="check">✓</span><span>Menyusun metodologi penyampaian materi agar kegiatan berjalan menarik, interaktif, dan relevan dengan kebutuhan peserta.</span></li>
+              <li><span class="check">✓</span><span>Melakukan manajemen pemangku kepentingan terkait pemilihan pemateri, fasilitator, dan pemandu acara.</span></li>
+              <li><span class="check">✓</span><span>Menyusun lini masa operasional dan manajemen waktu mikro melalui rundown kegiatan.</span></li>
+              <li><span class="check">✓</span><span>Menyusun indikator capaian acara dan merancang sistem apresiasi atau awards bagi peserta.</span></li>
+              <li><span class="check">✓</span><span>Membuat TOR sebagai panduan substansi dan teknis pelaksanaan kegiatan.</span></li>
+            </ul>
+          </article>
+
+          <article class="division-card reveal">
+            <div class="division-top">
+              <div class="icon">📦</div>
+              <div>
+                <h3>Divisi Logistik</h3>
+                <p>Divisi taktis yang bertanggung jawab atas manajemen aset, pengadaan infrastruktur, serta kesiapan fisik tempat demi kelancaran operasional acara.</p>
+              </div>
+            </div>
+            <ul class="task-list">
+              <li><span class="check">✓</span><span>Mengelola pengadaan, inventarisasi, dan distribusi seluruh peralatan teknis maupun perlengkapan acara.</span></li>
+              <li><span class="check">✓</span><span>Melakukan koordinasi dan kerja sama dengan vendor eksternal terkait penyewaan fasilitas pendukung seperti audio, tempat, dan kebutuhan teknis lainnya.</span></li>
+              <li><span class="check">✓</span><span>Bertanggung jawab atas produksi material cetak seperti banner, cue card MC, sertifikat, plakat, dan properti pendukung acara.</span></li>
+              <li><span class="check">✓</span><span>Memastikan seluruh perlengkapan tersedia, layak digunakan, dan siap sebelum kegiatan dimulai.</span></li>
+              <li><span class="check">✓</span><span>Menjaga kesiapan area kegiatan agar sesuai dengan kebutuhan konsep dan alur acara.</span></li>
+            </ul>
+          </article>
+
+          <article class="division-card reveal">
+            <div class="division-top">
+              <div class="icon">🤝</div>
+              <div>
+                <h3>Divisi Humas</h3>
+                <p>Gerbang komunikasi utama kepanitiaan yang berfungsi mengelola hubungan kelembagaan, kemitraan eksternal, dan manajemen kepesertaan.</p>
+              </div>
+            </div>
+            <ul class="task-list">
+              <li><span class="check">✓</span><span>Mengurus seluruh alur birokrasi, legalitas formal, perizinan, dan pengajuan proposal kegiatan.</span></li>
+              <li><span class="check">✓</span><span>Menjembatani komunikasi formal dengan pihak internal kampus seperti dosen, pembina IMAGE, Kaprodi, Dekan, dan pihak terkait lainnya.</span></li>
+              <li><span class="check">✓</span><span>Menghubungi pemateri serta mengatur komunikasi yang berkaitan dengan kebutuhan narasumber.</span></li>
+              <li><span class="check">✓</span><span>Mengembangkan strategi komunikasi publik, kemitraan media, dan penyebaran informasi kegiatan.</span></li>
+              <li><span class="check">✓</span><span>Mengelola proses open registration, grup peserta, dan kebutuhan informasi peserta IMAGE Training Centre.</span></li>
+              <li><span class="check">✓</span><span>Bertindak sebagai pusat informasi atau contact person bagi peserta dan pihak eksternal.</span></li>
+              <li><span class="check">✓</span><span>Mengelola link absensi dan data kehadiran seluruh partisipan kegiatan.</span></li>
+            </ul>
+          </article>
+
+          <article class="division-card reveal">
+            <div class="division-top">
+              <div class="icon">📸</div>
+              <div>
+                <h3>Divisi Pubdok</h3>
+                <p>Divisi kreatif yang bertanggung jawab atas manajemen citra, strategi komunikasi visual, dan pengarsipan digital seluruh momen kegiatan.</p>
+              </div>
+            </div>
+            <ul class="task-list">
+              <li><span class="check">✓</span><span>Merancang identitas visual kegiatan melalui pembuatan poster, banner, sertifikat, dan aset grafis lainnya.</span></li>
+              <li><span class="check">✓</span><span>Menyusun strategi pemasaran digital dan manajemen konten media sosial secara berkala dari fase pra-acara hingga pasca-acara.</span></li>
+              <li><span class="check">✓</span><span>Membuat konten promosi seperti coming soon, teaser pemateri, open registration, close registration, dan konten pengingat kegiatan.</span></li>
+              <li><span class="check">✓</span><span>Mengelola produksi media promosi kreatif, materi live report, dan dokumentasi audio-visual selama acara berlangsung.</span></li>
+              <li><span class="check">✓</span><span>Memproses produk dokumentasi akhir seperti after movie sebagai arsip visual kegiatan.</span></li>
+              <li><span class="check">✓</span><span>Mengelola distribusi produk digital seperti e-sertifikat untuk pemateri, panitia, dan peserta.</span></li>
+            </ul>
+          </article>
+
+          <article class="division-card reveal">
+            <div class="division-top">
+              <div class="icon">🍱</div>
+              <div>
+                <h3>Divisi Konsumsi</h3>
+                <p>Divisi yang bertanggung jawab atas manajemen logistik pangan, pemenuhan kebutuhan konsumsi, dan pelayanan jamuan bagi seluruh komponen acara.</p>
+              </div>
+            </div>
+            <ul class="task-list">
+              <li><span class="check">✓</span><span>Mengelola rantai pasok konsumsi, mulai dari survei vendor, pemilihan menu, hingga proses pembelian.</span></li>
+              <li><span class="check">✓</span><span>Menentukan kebutuhan konsumsi untuk pemateri, dosen, peserta, panitia, dan pihak terkait lainnya.</span></li>
+              <li><span class="check">✓</span><span>Memastikan konsumsi tersedia dalam jumlah yang sesuai, layak, dan tepat sasaran.</span></li>
+              <li><span class="check">✓</span><span>Bertanggung jawab atas ketepatan waktu distribusi konsumsi pada hari pelaksanaan kegiatan.</span></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="closing">
+      <div class="container">
+        <div class="closing-card glass reveal">
+          <h2><span class="gradient-text">Grow. Connect. Level Up.</span></h2>
+          <p>
+            Melalui IMAGE Training Centre, diharapkan anggota IMAGE dan Mahasiswa Manajemen UPI dapat
+            mengembangkan potensi diri, meningkatkan soft skill, serta membangun semangat kolaborasi yang
+            berdampak positif bagi lingkungan organisasi maupun akademik.
+          </p>
+          <div class="closing-actions">
+            <a class="btn" href="https://forms.gle/4VjLUe3VHG2z9tSK6" target="_blank" rel="noopener noreferrer">
+              Daftar Panitia ITC →
+            </a>
+          </div>
+          <div class="signature">IMAGE Training Centre · Departemen Ilmu dan Komunikasi</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      © 2026 IMAGE Training Centre — Departemen Ilmu dan Komunikasi IMAGE UPI
+    </div>
+  </footer>
+
+  <script>
+    const revealElements = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealElements.forEach((element, index) => {
+      element.style.transitionDelay = `${Math.min(index * 45, 280)}ms`;
+      observer.observe(element);
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach((link) => {
+      link.addEventListener("click", (event) => {
+        const target = document.querySelector(link.getAttribute("href"));
+        if (!target) return;
+        event.preventDefault();
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    });
+  </script>
+</body>
+</html>
